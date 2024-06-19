@@ -9,7 +9,7 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
       const [email, setEmail] = useState('');
     
       const validUsername = 'Hyper';
-      const validEmail = 'hyper1@gmail.com';
+      const validEmail = 'hyper@gmail';
     
       const handleLogin = () => {
         if (username === validUsername && email === validEmail) {
@@ -55,17 +55,24 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
                   <Text style={styles.continueText}>Or continue with</Text>
                   <View style={styles.line} />
                 </View>
-    
+              <View style={styles.centeredLogoContainer}>
                 <View style={styles.logoContainer}>
+                  <View style={styles.logoBox}>
                   <TouchableOpacity>
                     <Image style={styles.logo} source={require('./assets/vector.png')} />
                   </TouchableOpacity>
+                  </View>
+                  <View style={styles.logoBox}>
                   <TouchableOpacity>
                    <Image style={styles.logo} source={require('./assets/google.png')}/> 
                   </TouchableOpacity>
+                  </View>
+                  <View style={styles.logoBox}>
                   <TouchableOpacity>
                     <Image style={styles.logo} source={require('./assets/facebook.png')}/>
                   </TouchableOpacity>
+                  </View>
+                </View>
                 </View>
     
                   <View style={styles.register}>
@@ -75,7 +82,6 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
                   </Text>
                   </View>
 
-    
               </View>
     
               <StatusBar style="auto" />
@@ -158,16 +164,29 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
         fontSize: 16,
         color: '#AFB0B6',
       },
+      centeredLogoContainer: {
+        alignItems: 'center', 
+      },
       logoContainer: {
+        width:216,
+        height: 56,
+        alignItems: 'center',
         flexDirection: 'row',
         justifyContent: 'space-evenly',
         marginTop: 20,
       },
-      logo: {
-        width: 50,
-        height: 40,
-        borderRadius: 20,
+      logoBox:{
+        justifyContent: 'space-evenly',
+        width: 56,
+        height: 56,
       },
+      logo: {
+        width:30,
+        height:30,
+        left:12,
+        borderRadius: 50,
+      },
+
       register: {
         marginTop: 50,
         flexDirection: 'row', 
@@ -180,7 +199,7 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
       registerLink: {
         color: '#356899',
         fontSize: 16,
-        marginLeft: 5, // Adds a small margin to separate text
+        marginLeft: 5, 
       },
       
     });
